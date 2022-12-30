@@ -1,0 +1,139 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    background-color: #497BE8;
+    font-family: sans-serif;
+}
+
+h1
+{
+    text-align: center;
+    margin-top: 2em;
+    color: white;
+}
+
+h3
+{
+    text-align: center;
+    color: white;
+    margin-top: 1em;
+    font-style: italic;
+}
+.container
+{
+    background-color: #80838a;
+    position: absolute;
+    width: 40%;
+    height: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 2em;
+    
+    
+}
+
+.container, .playerScoreDiv, .computerScoreDiv, .resultScore
+{
+    border-radius: 15px;
+}
+
+.playerScoreDiv, .computerScoreDiv, .resultScore
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.winner-text
+{
+    text-align: center;
+}
+
+
+
+.buttons
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 1em 0;
+}
+
+.resultDiv
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.playerScoreDiv
+{
+    background-color: #497BE8;
+    color: white;
+    width: 5em;
+    height: 5em;
+    margin: 10px 15px;
+    font-size: 1em;
+}
+
+.computerScoreDiv
+{
+    background-color: #497BE8;
+    color: white;
+    width: 5em;
+    height: 5em;
+    margin: 10px 15px;
+    font-size: 1em;
+}
+
+.resultScore
+{
+    background-color: #497BE8;
+    color: white;
+    width: 90%;
+    height: 90%;
+    margin: 1em auto;
+    font-size: 1em;
+
+
+
+}
+
+
+.player-score-span
+{
+    margin-right: 3em;
+}
+
+.resultScore p
+{
+    margin-bottom: 0.7em;
+}
+
+button
+{
+    font-size: 28px;
+    padding: 0.5em;
+    margin: 0 0.5em;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color: #497BE8;
+    color: white;
+    cursor: pointer;
+}
+
+
+
+

@@ -4,13 +4,61 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://unpkg.com/emoji.css/dist/emoji.min.css'>
     <link rel="stylesheet" href="rps.css">
     <title> Rock Paper Scissors </title>
 </head>
 <body>
     
 
-    <h1> This is a rock-paper-scissors game</h1>
+    <h1> This is a 5 Point Rock-Paper-Scissors Game</h1>
+    <h3> Who ever reaches a score of 5 first, wins the game</h3>
+
+    <div class="container">
+
+        <div class="buttons">
+
+            <button class="rock-btn"> <span class="ec ec-fist"></span> </button>
+            <button class="paper-btn"> <span class="ec ec-raised-hand-with-fingers-splayed"></span> </button>
+            <button class="scissor-btn"> <span class="ec ec-crossed-fingers"></span> </button>
+
+        </div>
+
+        <div class="resultDiv">
+
+            <div class="playerScoreDiv">
+
+                <p class="playerScore"> 1 </p>
+
+            </div>
+    
+            <div class="computerScoreDiv">
+
+                <p class="computerScore"> 2 </p>
+
+            </div>
+    
+            
+
+        </div>
+
+        <div class="resultScore">
+
+            <div class="winner-text">
+                
+                <p> You Won!! </p>
+                <p> ---- Score ---- </p>
+                <p> Player <span class="player-score-span"> 1 </span>  Computer <span class="computer-score-span"> 2 </span></p>
+               
+
+            </div>
+
+        </div>
+
+
+        
+
+    </div>
 
     <script src="rps.js"></script>
 </body>

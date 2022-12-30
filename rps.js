@@ -1,3 +1,14 @@
+// const rockBtn = document.querySelector(".rock-btn")
+// const paperBtn = document.querySelector(".paper-btn")
+// const scissorBtn = document.querySelector(".scissor-btn")
+// const resultDiv = document.querySelector(".resultDiv")
+// const playerScore = document.querySelector(".playerScore")
+// const computerScore = document.querySelector(".computerScore")
+// const playerScoreSpan = document.querySelector(".player-score-span")
+// const computerScoreSpan = document.querySelector(".computer-score-span")
+
+
+
 function getComputerChoice()
 {
     let rpsArray = ["rock", "paper", "scissor"]
@@ -64,111 +75,111 @@ function playRound (playerSelection, computerSelection)
 }
 
 
-function game()
-{
+// function game()
+// {
     
 
-    let playerCounter = 0
-    let computerCounter = 0
+//     let playerCounter = 0
+//     let computerCounter = 0
 
-    for (let i = 0; i < 5; i++)
-    {
-        let playerSelection = prompt("Enter your choice [from rock, paper, scissors]")
-        let comoputerChoice = getComputerChoice()
-        playRound(playerSelection, comoputerChoice)
+//     for (let i = 0; i < 5; i++)
+//     {
+//         let playerSelection = prompt("Enter your choice [from rock, paper, scissors]")
+//         let comoputerChoice = getComputerChoice()
+//         playRound(playerSelection, comoputerChoice)
 
-        {
-            if (playRound(playerSelection, comoputerChoice) === 0)
-            {
-                if (comoputerChoice === "rock")
-                {
-                    console.log("It's a Draw! A Rock can't rock another Rock")
-                }
+//         {
+//             if (playRound(playerSelection, comoputerChoice) === 0)
+//             {
+//                 if (comoputerChoice === "rock")
+//                 {
+//                     console.log("It's a Draw! A Rock can't rock another Rock")
+//                 }
 
-                else if (comoputerChoice === "paper")
-                {
-                    console.log("It's a Draw! A Paper can't fold another Paper")
-                }
+//                 else if (comoputerChoice === "paper")
+//                 {
+//                     console.log("It's a Draw! A Paper can't fold another Paper")
+//                 }
 
-                else
-                {
-                    console.log("It's a Draw! A Scissor can't cut another Scissor")
-                }
+//                 else
+//                 {
+//                     console.log("It's a Draw! A Scissor can't cut another Scissor")
+//                 }
 
 
-            }
+//             }
 
-            else if (playRound(playerSelection, comoputerChoice) === 1)
-            {
-                if(playerSelection === "rock")
-                {           
-                    console.log("Player Wins! A Rock smashes Scissors")
-                }
+//             else if (playRound(playerSelection, comoputerChoice) === 1)
+//             {
+//                 if(playerSelection === "rock")
+//                 {           
+//                     console.log("Player Wins! A Rock smashes Scissors")
+//                 }
 
-                else if (playerSelection === "paper")
-                {
-                    console.log("Player Wins! A Paper folds a Rock")
-                }
+//                 else if (playerSelection === "paper")
+//                 {
+//                     console.log("Player Wins! A Paper folds a Rock")
+//                 }
 
-                else
-                {
-                    console.log("Player Wins! A Scissor cuts through Paper")
-                }
+//                 else
+//                 {
+//                     console.log("Player Wins! A Scissor cuts through Paper")
+//                 }
 
-                playerCounter = playerCounter + 1
-            }
+//                 playerCounter = playerCounter + 1
+//             }
 
-            else if (playRound(playerSelection, comoputerChoice) === 2)
-            {
-                if(comoputerChoice === "rock")
-                {
-                    console.log("Computer Wins! A Rock smashes Scissors")
-                }
+//             else if (playRound(playerSelection, comoputerChoice) === 2)
+//             {
+//                 if(comoputerChoice === "rock")
+//                 {
+//                     console.log("Computer Wins! A Rock smashes Scissors")
+//                 }
 
-                else if (comoputerChoice === "paper")
-                {
-                    console.log("Computer Wins! A Paper folds a Rock")
-                }
+//                 else if (comoputerChoice === "paper")
+//                 {
+//                     console.log("Computer Wins! A Paper folds a Rock")
+//                 }
 
-                else
-                {
-                    console.log("Computer Wins! A Scissor cuts through a Paper")
-                }
+//                 else
+//                 {
+//                     console.log("Computer Wins! A Scissor cuts through a Paper")
+//                 }
 
-                computerCounter = computerCounter + 1
-            }
+//                 computerCounter = computerCounter + 1
+//             }
 
 
             
-        }
-    }
+//         }
+//     }
 
-    if (playerCounter > computerCounter)
-    {
-        console.log("You Win!")
-        console.log("Final Winner: Player")
-        console.log("----- Score ---" )
-        console.log(playerCounter + " to " + computerCounter)
-    }
+//     if (playerCounter > computerCounter)
+//     {
+//         console.log("You Win!")
+//         console.log("Final Winner: Player")
+//         console.log("----- Score ---" )
+//         console.log(playerCounter + " to " + computerCounter)
+//     }
 
-    else if (playerCounter < computerCounter)
-    {
+//     else if (playerCounter < computerCounter)
+//     {
 
-        console.log("You Lost!")
-        console.log("Final Winner: Computer")
-        console.log("----- Score ---" )
-        console.log(computerCounter + " to " + playerCounter)  
-    }
+//         console.log("You Lost!")
+//         console.log("Final Winner: Computer")
+//         console.log("----- Score ---" )
+//         console.log(computerCounter + " to " + playerCounter)  
+//     }
 
-    else
-    {
-        console.log("Its a Draw!")
-        console.log("----- Score ---" )
-        console.log(playerCounter + " to " + computerCounter)
-    }
+//     else
+//     {
+//         console.log("Its a Draw!")
+//         console.log("----- Score ---" )
+//         console.log(playerCounter + " to " + computerCounter)
+//     }
 
-}
+// }
 
-game()
+// game()
 
 
