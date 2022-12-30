@@ -1,12 +1,49 @@
-// const rockBtn = document.querySelector(".rock-btn")
-// const paperBtn = document.querySelector(".paper-btn")
-// const scissorBtn = document.querySelector(".scissor-btn")
-// const resultDiv = document.querySelector(".resultDiv")
-// const playerScore = document.querySelector(".playerScore")
-// const computerScore = document.querySelector(".computerScore")
-// const playerScoreSpan = document.querySelector(".player-score-span")
-// const computerScoreSpan = document.querySelector(".computer-score-span")
+const rockBtn = document.querySelector(".rock-btn")
+const paperBtn = document.querySelector(".paper-btn")
+const scissorBtn = document.querySelector(".scissor-btn")
+const resultDiv = document.querySelector(".resultDiv")
+const playerScore = document.querySelector(".playerScore")
+const computerScore = document.querySelector(".computerScore")
+const playerScoreSpan = document.querySelector(".player-score-span")
+const computerScoreSpan = document.querySelector(".computer-score-span")
+const buttonDiv = document.querySelector(".buttons")
 
+buttonDiv.addEventListener('click', function(e)
+{
+    e.preventDefault()
+
+    let buttonSelected = e.target.className
+    let computerChoice = getComputerChoice()
+
+
+
+    if (buttonSelected === "ec ec-fist")
+    {
+        buttonSelected = "rock"
+        
+    }
+
+    else if (buttonSelected === "ec ec-raised-hand-with-fingers-splayed")
+    {
+        buttonSelected = "paper"
+        
+    }
+
+    else if (buttonSelected === "ec ec-crossed-fingers")
+    {
+        buttonSelected = "scissor"
+        
+    }
+
+    
+    playRound(buttonSelected, computerChoice)
+    
+
+    
+
+
+
+})
 
 
 function getComputerChoice()
@@ -18,16 +55,16 @@ function getComputerChoice()
 }
 
 
+
 function playRound (playerSelection, computerSelection)
 {
 
-    playerSelection = playerSelection.toLowerCase()
-    computerSelection = computerSelection.toLowerCase()
 
     if (playerSelection === computerSelection)
     {
 
-        return 0
+        console.log("It's a Draw")
+        console.log(playerSelection + "  " + computerSelection)
     }
 
     else
@@ -36,12 +73,14 @@ function playRound (playerSelection, computerSelection)
         {
             if (computerSelection === "scissor")
             {
-                return 1
+                console.log("Player Wins!! Rocks breaks Scissors")
+                console.log(playerSelection + "  " + computerSelection)
             }
 
             else
             {
-                return 2
+                console.log("Computer Wins!! Paper folds a rock")
+                console.log(playerSelection + "  " + computerSelection)
             }
         }
 
@@ -49,12 +88,14 @@ function playRound (playerSelection, computerSelection)
         {
             if (computerSelection === "rock")
             {
-                return 1
+                console.log("Player Wins!! Paper folds a rock")
+                console.log(playerSelection + "  " + computerSelection)
             }
 
             else 
             {
-                return 2
+                console.log("Computer Wins!! Scissor cuts through paper")
+                console.log(playerSelection + "  " + computerSelection)
             }
         }
 
@@ -62,18 +103,19 @@ function playRound (playerSelection, computerSelection)
         {
             if(computerSelection === "rock")
             {
-                return 2
+                console.log("Computer Wins!! Rock breaks scissors")
+                console.log(playerSelection + "  " + computerSelection)
             }
 
             else
             {
-                return 1
+                console.log("Player Wins!! Scissor cuts throught paper")
+                console.log(playerSelection + "  " + computerSelection)
             }
         }
     }
 
 }
-
 
 // function game()
 // {
@@ -180,6 +222,5 @@ function playRound (playerSelection, computerSelection)
 
 // }
 
-// game()
 
 
