@@ -7,6 +7,9 @@ const computerScore = document.querySelector(".computerScore")
 const playerScoreSpan = document.querySelector(".player-score-span")
 const computerScoreSpan = document.querySelector(".computer-score-span")
 const buttonDiv = document.querySelector(".buttons")
+const winnerAnnouncer = document.querySelector(".winner-announcement")
+const scoreParagraph = document.querySelector(".score-p")
+
 
 let turn = 5
 let playerCounter = 0
@@ -46,17 +49,17 @@ buttonDiv.addEventListener('click', function(e)
         {
             if (comoputerChoice === "rock")
             {
-                console.log("It's a Draw! A Rock can't rock another Rock")
+                winnerAnnouncer.textContent = "It's a Draw! A Rock can't rock another Rock"
             }
 
             else if (comoputerChoice === "paper")
             {
-                console.log("It's a Draw! A Paper can't fold another Paper")
+                winnerAnnouncer.textContent = "It's a Draw! A Paper can't fold another Paper"
             }
 
             else
             {
-                console.log("It's a Draw! A Scissor can't cut another Scissor")
+                winnerAnnouncer.textContent = "It's a Draw! A Scissor can't cut another Scissor"
             }
 
             
@@ -68,40 +71,42 @@ buttonDiv.addEventListener('click', function(e)
         {
             if(buttonSelected === "rock")
             {           
-                console.log("Player Wins! A Rock smashes Scissors")
+                winnerAnnouncer.textContent = "Player Wins! A Rock smashes Scissors"
             }
 
             else if (buttonSelected === "paper")
             {
-                console.log("Player Wins! A Paper folds a Rock")
+                winnerAnnouncer.textContent = "Player Wins! A Paper folds a Rock"
             }
 
             else
             {
-                console.log("Player Wins! A Scissor cuts through Paper")
+                winnerAnnouncer.textContent = "Player Wins! A Scissor cuts through Paper"
             }
 
             playerCounter = playerCounter + 1
+            playerScore.textContent = playerCounter
         }
 
         else if (playRound(buttonSelected, comoputerChoice) === 2)
         {
             if(comoputerChoice === "rock")
             {
-                console.log("Computer Wins! A Rock smashes Scissors")
+                winnerAnnouncer.textContent = "Computer Wins! A Rock smashes Scissors"
             }
 
             else if (comoputerChoice === "paper")
             {
-                console.log("Computer Wins! A Paper folds a Rock")
+                winnerAnnouncer.textContent = "Computer Wins! A Paper folds a Rock"
             }
 
             else
             {
-                console.log("Computer Wins! A Scissor cuts through a Paper")
+                winnerAnnouncer.textContent = "Computer Wins! A Scissor cuts through a Paper"
             }
 
             computerCounter = computerCounter + 1
+            computerScore.textContent = computerCounter
         }
 
         turn = turn - 1
@@ -112,26 +117,29 @@ buttonDiv.addEventListener('click', function(e)
         console.log("The End")
         if (playerCounter > computerCounter)
         {
-            console.log("You Win!")
-            console.log("Final Winner: Player")
-            console.log("----- Score ---" )
-            console.log(playerCounter + " to " + computerCounter)
+            winnerAnnouncer.textContent = "You Won!!!!"
+            scoreParagraph.textContent = "----- Score ---" 
+            playerScoreSpan.textContent = playerCounter 
+            computerScoreSpan.textContent = computerCounter
+
+            
         }
 
         else if (playerCounter < computerCounter)
         {
 
-            console.log("You Lost!")
-            console.log("Final Winner: Computer")
-            console.log("----- Score ---" )
-            console.log(computerCounter + " to " + playerCounter)  
+            winnerAnnouncer.textContent = "You Lost!!!"
+            scoreParagraph.textContent = "----- Score ---"
+            playerScoreSpan.textContent = playerCounter 
+            computerScoreSpan.textContent = computerCounter  
         }
 
         else
         {
-            console.log("Its a Draw!")
-            console.log("----- Score ---" )
-            console.log(playerCounter + " to " + computerCounter)
+            winnerAnnouncer.textContent = "It's a Draw"
+            scoreParagraph.textContent = "----- Score ---"
+            playerScoreSpan.textContent = playerCounter 
+            computerScoreSpan.textContent = computerCounter
         }
         
     }
