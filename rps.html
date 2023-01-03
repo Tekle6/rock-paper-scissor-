@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <h1> This is a war between a man and a machine!! </h1>
+    <h1 class="header"> This is a war between a man and a machine!! </h1>
  
         <div class="buttons">
 
@@ -24,23 +24,41 @@
 
             <span class="ec ec-man human-emoji">
 
-                 <p class="human-score"> 7 </p> 
+                 <p class="human-score"> 0 </p> 
 
                  <div class="playerScoreDiv">
 
-                    <p class="playerScore"> 0 </p>
+                    <p class="playerScore">  </p>
     
                 </div>
 
             </span>
+
+            <div class="winner-text" style="display: none;">
+
+                <span class="ec ec-wink" id="winnerEmoji" style="font-size: 70px;"></span>
+                <p class="winner-announcement"> YOU WON!!! </p>
+                <p class="score"> ----- SCORE ----- </p>
+                
+                <div class="scoreSpan">
+
+                    <span> Player  <p class="human-point"> 0 </p>   </span>
+                    <span> Computer  <p class="computer-point"> 0 </p>   </span>
+
+                </div>
+
+                <button class="play-again-btn"> Play Again </button>
+
+                
+            </div>
 
             <span class="ec ec-robot computer-emoji"> 
 
-                <p class="computer-score"> 5 </p> 
+                <p class="computer-score"> 0 </p> 
 
                 <div class="computerScoreDiv">
 
-                    <p class="computerScore"> 0 </p>
+                    <p class="computerScore">  </p>
     
                 </div>
             
@@ -50,9 +68,7 @@
 
         </div>
 
-        <div class="winner-text">
-            <p class="winner-announcement">  </p>
-        </div>
+        
 
 
 

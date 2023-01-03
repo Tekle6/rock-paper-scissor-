@@ -9,11 +9,29 @@ const computerScoreSpan = document.querySelector(".computer-score-span")
 const buttonDiv = document.querySelector(".buttons")
 const winnerAnnouncer = document.querySelector(".winner-announcement")
 const scoreParagraph = document.querySelector(".score-p")
+const header = document.querySelector(".header")
+const humanScoreParagraph = document.querySelector(".human-score")
+const computerScoreParagraph = document.querySelector(".computer-score")
+const playAgainBtn = document.querySelector(".play-again-btn")
+const winnerText = document.querySelector(".winner-text")
+const humanPoint = document.querySelector(".human-point")
+const computerPoint = document.querySelector(".computer-point")
+const scoreText = document.querySelector(".score")
+const winnerEmoji = document.querySelector("#winnerEmoji")
 
 
 let turn = 5
 let playerCounter = 0
 let computerCounter = 0
+
+playAgainBtn.addEventListener('click', function(e)
+{
+
+    e.preventDefault()
+    window.location.reload()
+    winnerText.style.display = 'none'
+    
+})
 
 buttonDiv.addEventListener('click', function(e)
 {
@@ -49,17 +67,23 @@ buttonDiv.addEventListener('click', function(e)
         {
             if (comoputerChoice === "rock")
             {
-                winnerAnnouncer.textContent = "It's a Draw! A Rock can't rock another Rock"
+                computerScore.innerHTML = `<span class="ec ec-fist" style="font-size: 40px;"></span>`
+                playerScore.innerHTML = `<span class="ec ec-fist" style="font-size: 40px;"></span>`
+                header.textContent = "It's a Draw! A Rock can't rock another Rock"
             }
 
             else if (comoputerChoice === "paper")
             {
-                winnerAnnouncer.textContent = "It's a Draw! A Paper can't fold another Paper"
+                computerScore.innerHTML = `<span class="ec ec-raised-hand-with-fingers-splayed" style="font-size: 40px;"></span>`
+                playerScore.innerHTML = `<span class="ec ec-raised-hand-with-fingers-splayed" style="font-size: 40px;"></span>`
+                header.textContent = "It's a Draw! A Paper can't fold another Paper"
             }
 
             else
             {
-                winnerAnnouncer.textContent = "It's a Draw! A Scissor can't cut another Scissor"
+                computerScore.innerHTML = `<span class="ec ec-crossed-fingers" style="font-size: 40px;"></span>`
+                playerScore.innerHTML = `<span class="ec ec-crossed-fingers" style="font-size: 40px;"></span>`
+                header.textContent = "It's a Draw! A Scissor can't cut another Scissor"
             }
 
             
@@ -70,43 +94,55 @@ buttonDiv.addEventListener('click', function(e)
         else if (playRound(buttonSelected, comoputerChoice) === 1)
         {
             if(buttonSelected === "rock")
-            {           
-                winnerAnnouncer.textContent = "Player Wins! A Rock smashes Scissors"
+            {   
+                playerScore.innerHTML = `<span class="ec ec-fist" style="font-size: 40px;"></span>` 
+                computerScore.innerHTML = `<span class="ec ec-crossed-fingers" style="font-size: 40px;"></span>`      
+                header.textContent = "Player Wins! A Rock smashes Scissors"
             }
 
             else if (buttonSelected === "paper")
             {
-                winnerAnnouncer.textContent = "Player Wins! A Paper folds a Rock"
+                playerScore.innerHTML = `<span class="ec ec-raised-hand-with-fingers-splayed" style="font-size: 40px;"></span>`
+                computerScore.innerHTML = `<span class="ec ec-fist" style="font-size: 40px;"></span>`
+                header.textContent = "Player Wins! A Paper folds a Rock"
             }
 
             else
             {
-                winnerAnnouncer.textContent = "Player Wins! A Scissor cuts through Paper"
+                computerScore.innerHTML = `<span class="ec ec-raised-hand-with-fingers-splayed" style="font-size: 40px;"></span>`
+                playerScore.innerHTML = `<span class="ec ec-crossed-fingers" style="font-size: 40px;"></span>`
+                header.textContent = "Player Wins! A Scissor cuts through Paper"
             }
 
             playerCounter = playerCounter + 1
-            playerScore.textContent = playerCounter
+            humanScoreParagraph.textContent = playerCounter
         }
 
         else if (playRound(buttonSelected, comoputerChoice) === 2)
         {
             if(comoputerChoice === "rock")
             {
-                winnerAnnouncer.textContent = "Computer Wins! A Rock smashes Scissors"
+                playerScore.innerHTML = `<span class="ec ec-crossed-fingers" style="font-size: 40px;"></span>`
+                computerScore.innerHTML = `<span class="ec ec-fist" style="font-size: 40px;"></span>`
+                header.textContent = "Computer Wins! A Rock smashes Scissors"
             }
 
             else if (comoputerChoice === "paper")
             {
-                winnerAnnouncer.textContent = "Computer Wins! A Paper folds a Rock"
+                playerScore.innerHTML = `<span class="ec ec-fist" style="font-size: 40px;"></span>`
+                computerScore.innerHTML = `<span class="ec ec-raised-hand-with-fingers-splayed" style="font-size: 40px;"></span>`
+                header.textContent = "Computer Wins! A Paper folds a Rock"
             }
 
             else
             {
-                winnerAnnouncer.textContent = "Computer Wins! A Scissor cuts through a Paper"
+                playerScore.innerHTML = `<span class="ec ec-raised-hand-with-fingers-splayed" style="font-size: 40px;"></span>`
+                computerScore.innerHTML = `<span class="ec ec-crossed-fingers" style="font-size: 40px;"></span>`
+                header.textContent = "Computer Wins! A Scissor cuts through a Paper"
             }
 
             computerCounter = computerCounter + 1
-            computerScore.textContent = computerCounter
+            computerScoreParagraph.textContent = computerCounter
         }
 
         turn = turn - 1
@@ -114,13 +150,16 @@ buttonDiv.addEventListener('click', function(e)
 
     else
     {
-        console.log("The End")
+        winnerText.style.display = 'block'
         if (playerCounter > computerCounter)
         {
-            winnerAnnouncer.textContent = "You Won!!!!"
-            scoreParagraph.textContent = "----- Score ---" 
+            header.textContent = "You Won!!!!" 
+            scoreText.textContent = "----- SCORE -----"
+            winnerAnnouncer.textContent = "You Won!!!!" 
             playerScoreSpan.textContent = playerCounter 
             computerScoreSpan.textContent = computerCounter
+            humanPoint.textContent = playerCounter
+            computerPoint.textContent = computerCounter
 
             
         }
@@ -128,18 +167,26 @@ buttonDiv.addEventListener('click', function(e)
         else if (playerCounter < computerCounter)
         {
 
+            header.textContent = "You Lost!!!"
+            winnerEmoji.setAttribute("class", "ec ec-disappointed")
+            scoreText.textContent = "----- SCORE -----"
             winnerAnnouncer.textContent = "You Lost!!!"
-            scoreParagraph.textContent = "----- Score ---"
             playerScoreSpan.textContent = playerCounter 
-            computerScoreSpan.textContent = computerCounter  
+            computerScoreSpan.textContent = computerCounter 
+            humanPoint.textContent = playerCounter
+            computerPoint.textContent = computerCounter 
         }
 
         else
         {
-            winnerAnnouncer.textContent = "It's a Draw"
-            scoreParagraph.textContent = "----- Score ---"
+            header.textContent = "The result is a Draw"
+            scoreText.textContent = "----- SCORE -----"
+            winnerEmoji.setAttribute("class", "ec ec-raised-hands")
+            winnerAnnouncer.textContent = "The result is a Draw"
             playerScoreSpan.textContent = playerCounter 
             computerScoreSpan.textContent = computerCounter
+            humanPoint.textContent = playerCounter
+            computerPoint.textContent = computerCounter
         }
         
     }
