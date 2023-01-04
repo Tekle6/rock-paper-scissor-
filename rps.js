@@ -156,8 +156,6 @@ buttonDiv.addEventListener('click', function(e)
             header.textContent = "You Won!!!!" 
             scoreText.textContent = "----- SCORE -----"
             winnerAnnouncer.textContent = "You Won!!!!" 
-            playerScoreSpan.textContent = playerCounter 
-            computerScoreSpan.textContent = computerCounter
             humanPoint.textContent = playerCounter
             computerPoint.textContent = computerCounter
 
@@ -170,9 +168,7 @@ buttonDiv.addEventListener('click', function(e)
             header.textContent = "You Lost!!!"
             winnerEmoji.setAttribute("class", "ec ec-disappointed")
             scoreText.textContent = "----- SCORE -----"
-            winnerAnnouncer.textContent = "You Lost!!!"
-            playerScoreSpan.textContent = playerCounter 
-            computerScoreSpan.textContent = computerCounter 
+            winnerAnnouncer.textContent = "You Lost!!!" 
             humanPoint.textContent = playerCounter
             computerPoint.textContent = computerCounter 
         }
@@ -183,8 +179,6 @@ buttonDiv.addEventListener('click', function(e)
             scoreText.textContent = "----- SCORE -----"
             winnerEmoji.setAttribute("class", "ec ec-raised-hands")
             winnerAnnouncer.textContent = "The result is a Draw"
-            playerScoreSpan.textContent = playerCounter 
-            computerScoreSpan.textContent = computerCounter
             humanPoint.textContent = playerCounter
             computerPoint.textContent = computerCounter
         }
